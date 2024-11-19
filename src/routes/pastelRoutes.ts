@@ -21,7 +21,7 @@ const pastelRoutes = Router();
  * /api/Pastel:
  *   get:
  *     summary: Obtener todos los productos
- *     tags: [Products]
+ *     tags: [pastel]
  *     responses:
  *       200:
  *         description: Lista de productos
@@ -33,7 +33,7 @@ pastelRoutes.get("/", getAllPastel);
  * /api/Pastel/{id}:
  *   get:
  *     summary: Obtener un producto por ID
- *     tags: [Products]
+ *     tags: [pastel]
  *     parameters:
  *       - in: path
  *         name: id
