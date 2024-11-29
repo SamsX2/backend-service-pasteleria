@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { Pastel } from "./entities/Pastel";
+import { Pastel } from "./entities/pastel";
 
 
 export const AppDataSource = new DataSource({

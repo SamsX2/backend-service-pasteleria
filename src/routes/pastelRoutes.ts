@@ -72,6 +72,8 @@ pastelRoutes.get("/:id", getPastelById);
  *                 type: string
  *               price:
  *                 type: number
+ *               imgUrl:
+ *                 type: string
  *     responses:
  *       201:
  *         description: Producto creado
@@ -106,6 +108,8 @@ pastelRoutes.post("/", createPastel);
  *                 type: string
  *               price:
  *                 type: number
+ *               imgUrl:
+ *                 type: string
  *     responses:
  *       200:
  *         description: Producto actualizado

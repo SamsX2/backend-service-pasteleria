@@ -34,11 +34,12 @@ export const getPastelById = async(req: Request, res: Response) => {
 // POST - Crear un nuevo Producto
 export const createPastel = async(req: Request, res: Response) => {
   try {
-    const { name, description, price } = req.body;
+    const { name, description, price, imgUrl } = req.body;
     const pastel = new Pastel ();
     pastel.name = name;
     pastel.description = description;
     pastel.price = price;
+    pastel.imgUrl = imgUrl;
 
     await PastelRepository.save(pastel);
     res.status(201).json(Pastel);
@@ -50,7 +51,7 @@ export const createPastel = async(req: Request, res: Response) => {
 // PUT - Actualizar un Producto existente
 export const updatePastel = async(req: Request, res: Response) => {
   try {
-    const { name, description, price } = req.body;
+    const { name, description, price, imgUrl } = req.body;
     const Pastel = await PastelRepository.findOneBy({
       id: parseInt(req.params.id),
     });
@@ -59,6 +60,7 @@ export const updatePastel = async(req: Request, res: Response) => {
       Pastel.name = name ?? Pastel.name;
       Pastel.description = description ?? Pastel.description;
       Pastel.price = price ?? Pastel.price;
+      Pastel.imgUrl = imgUrl ?? Pastel.imgUrl;
 
       await PastelRepository.save(Pastel);
       res.json(Pastel);

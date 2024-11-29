@@ -13,4 +13,7 @@ export class Pastel {
 
   @Column("decimal")
   price!: number;
+
+  @Column("text")
+  imgUrl!: string;
 }
